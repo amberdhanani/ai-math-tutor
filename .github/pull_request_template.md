@@ -2,6 +2,18 @@
 
 <!-- Provide a clear and concise description of what this PR does -->
 
+## ⚠️ Critical Files Check
+
+<!-- Have you modified any of these critical files? -->
+- [ ] ❌ **NO** - I did not modify any critical files (skip to next section)
+- [ ] ✅ **YES** - I modified critical files and have **notified @amberdhanani**
+
+**Critical files include:**
+- `src/App.tsx` or any files in `api/`, `src/data/`, `src/types/`
+- Configuration files: `package.json`, `tsconfig.json`, `vite.config.ts`, `vercel.json`, `.env.example`
+
+**If YES:** Tag @amberdhanani in a comment on this PR before requesting merge.
+
 ## Type of Change
 
 <!-- Check all that apply -->
@@ -45,6 +57,8 @@ Closes #(issue)
 
 <!-- Check all that apply -->
 
+- [ ] **My branch is rebased on the latest `main`** (required before merge)
+- [ ] **If I modified critical files, I have notified @amberdhanani** (see Critical Files Check above)
 - [ ] My code follows the code style of this project
 - [ ] I have updated the documentation accordingly
 - [ ] I have read the [CONTRIBUTING.md](../CONTRIBUTING.md) document

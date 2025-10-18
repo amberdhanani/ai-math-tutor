@@ -4,6 +4,10 @@ node_modules/
 .yarn/
 .npm/
 
+# Lock files (keep only pnpm-lock.yaml since this is a pnpm project)
+package-lock.json
+yarn.lock
+
 # Production build
 dist/
 build/
