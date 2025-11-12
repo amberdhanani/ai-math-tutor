@@ -2,6 +2,81 @@
 
 Thank you for your interest in contributing to the AI Math Tutor project! This document provides guidelines and instructions for contributing.
 
+## 🔄 **CRITICAL: Rebase Frequently, Merge Sparingly**
+
+### Core Rule: Always Rebase When Main Updates
+
+**Whenever the `main` branch is updated, you MUST rebase your working branch immediately.**
+
+This is non-negotiable. It prevents merge conflicts, keeps history clean, and ensures your code works with the latest changes.
+
+#### How to Rebase Your Branch
+
+```bash
+# Make sure you're on your feature branch
+git checkout your-feature-branch
+
+# Fetch latest changes from remote
+git fetch origin
+
+# Rebase your branch onto the latest main
+git rebase origin/main
+
+# If there are conflicts, resolve them, then:
+git add .
+git rebase --continue
+
+# Force push your rebased branch (required after rebase)
+git push --force-with-lease
+```
+
+**Important:** Use `--force-with-lease` instead of `--force` to avoid overwriting others' work.
+
+#### When to Rebase
+
+- ✅ **Before starting work each day** - Check if main has updates
+- ✅ **Before requesting review** - Ensure your PR is up-to-date
+- ✅ **Immediately when main is updated** - Don't wait, rebase right away
+- ✅ **After addressing review comments** - Rebase again if main changed
+
+#### What NOT to Do
+
+- ❌ Don't merge `main` into your branch (rebase instead)
+- ❌ Don't force push with `--force` (use `--force-with-lease`)
+- ❌ Don't let your branch fall behind main
+
+## 🚨 **Critical Files: Coordination Required**
+
+Some files touch multiple features and require extra coordination. **If you modify any of these files, you MUST notify @amberdhanani BEFORE submitting your PR:**
+
+### Backend & API Files
+- `api/session.ts` - WebRTC session management
+- `api/render.ts` - Whiteboard rendering endpoint
+- **Any file in `api/` directory**
+
+### Core Application Files
+- `src/App.tsx` - Main application orchestration
+
+### Data & Type Definitions
+- **Any file in `src/data/` directory** (lesson definitions, schemas)
+- **Any file in `src/types/` directory** (TypeScript type definitions)
+
+### Configuration Files
+- `package.json`
+- `tsconfig.json`
+- `vite.config.ts`
+- `vercel.json`
+- `.env.example`
+
+### Why This Matters
+
+These files are the backbone of the application. Multiple developers may be working on features that depend on them. Coordinating changes prevents conflicts, breaking changes, and wasted effort.
+
+**How to Coordinate:**
+1. Before starting work on critical files, check with @amberdhanani
+2. During your PR, mention @amberdhanani in the description
+3. Wait for acknowledgment before merging
+
 ## Getting Started
 
 1. **Read the Documentation**
@@ -201,6 +276,8 @@ turn_detection: {
 
 ### PR Checklist
 
+- [ ] Your branch is rebased on the latest `main`
+- [ ] **If you modified critical files (api/, src/data/, src/types/, App.tsx, or config files), you have notified @amberdhanani**
 - [ ] Code builds without errors (`pnpm run build`)
 - [ ] No ESLint warnings
 - [ ] Manually tested all affected features

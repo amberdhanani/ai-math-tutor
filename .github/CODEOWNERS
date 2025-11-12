@@ -1,0 +1,44 @@
+# CODEOWNERS - Automatic Review Assignments
+#
+# This file defines code ownership for automatic review requests.
+# When a PR modifies files matching these patterns, the specified
+# owners are automatically requested as reviewers.
+#
+# Learn more: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# =============================================================================
+# CRITICAL FILES - These require @amberdhanani review
+# =============================================================================
+
+# Core Application Orchestration
+/src/App.tsx @amberdhanani
+
+# Backend API Endpoints
+/api/ @amberdhanani
+
+# Data Definitions & Schemas
+/src/data/ @amberdhanani
+
+# Type Definitions
+/src/types/ @amberdhanani
+
+# Configuration Files
+/package.json @amberdhanani
+/tsconfig.json @amberdhanani
+/vite.config.ts @amberdhanani
+/vercel.json @amberdhanani
+/.env.example @amberdhanani
+
+# =============================================================================
+# NOTES
+# =============================================================================
+#
+# - Patterns are matched bottom-to-top (last match wins)
+# - Use @username or @org/team-name for owners
+# - Paths are relative to repository root
+# - Trailing slashes match directories and all contents
+#
+# When you modify any of these files:
+# 1. @amberdhanani will automatically be requested as a reviewer
+# 2. You should still notify them directly before submitting the PR
+# 3. See CONTRIBUTING.md for the full coordination workflow
